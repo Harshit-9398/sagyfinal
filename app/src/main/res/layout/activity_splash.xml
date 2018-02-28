@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:background="#006080 "
+        tools:context="com.example.abhi.sagyfinal.splash">
+
+        <!-- The primary full-screen view. This can be replaced with whatever view
+             is needed to present your content, e.g. VideoView, SurfaceView,
+             TextureView, etc. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="100dp"
+            android:background="@drawable/outlined">
+            <TextView
+                android:id="@+id/fullscreen_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:keepScreenOn="true"
+                android:text="SAGY"
+                android:elevation="10dp"
+                android:textColor="#fff"
+                android:shadowRadius="10"
+                android:shadowColor="#002633"
+                android:textStyle="bold"
+                android:textSize="60sp"
+                />
+
+            <TextView
+                android:id="@+id/fullscreen_content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:elevation="5dp"
+                android:shadowRadius="5"
+                android:shadowColor="#002633"
+                android:keepScreenOn="true"
+                android:text="Saansad Adarsh Gram Yojana"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <!-- This FrameLayout insets its children based on system windows using
+             android:fitsSystemWindows. -->
+
+
+    </FrameLayout>
+
