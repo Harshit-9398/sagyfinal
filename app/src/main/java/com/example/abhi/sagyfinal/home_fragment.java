@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class home_fragment extends Fragment {
 
-Button b1;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable  ViewGroup container,
                              @Nullable  Bundle savedInstanceState) {
@@ -27,12 +27,8 @@ Button b1;
     {
         super.onViewCreated(view, savedInstanceState);
 
-        b1=(Button)view.findViewById(R.id.homepagebutton);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "u r on home screen fragment", Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
+
     }
 }

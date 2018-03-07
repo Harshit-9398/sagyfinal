@@ -16,7 +16,7 @@ public class login extends AppCompatActivity {
     EditText username,password;
     TextView not_registered_yet;
     CheckBox keep_me_logedin;
-    Button b1;
+    Button b1,b2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,14 @@ public class login extends AppCompatActivity {
         password=(EditText)findViewById(R.id.password);
         keep_me_logedin=(CheckBox)findViewById(R.id.keep_me_logedin);
         b1=(Button)findViewById(R.id.login_button);
-
+        b2=(Button)findViewById(R.id.temppbutton);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(login.this,home_page.class);
+                startActivity(i);
+            }
+        });
 
 
        b1.setOnClickListener(new View.OnClickListener() {

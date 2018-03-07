@@ -1,17 +1,19 @@
 package com.example.abhi.sagyfinal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class about_fragment extends Fragment {
 
-Button b1;
+Button read;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -24,13 +26,19 @@ Button b1;
     {
         super.onViewCreated(view, savedInstanceState);
 
-        b1=(Button)view.findViewById(R.id.about_button);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"u r on about fragment",Toast.LENGTH_SHORT).show();
+        read=(Button) view.findViewById(R.id.button);
 
-            }
-        });
+read.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+    Intent i=new Intent(getActivity(),web_view.class);
+    startActivity(i);
+
+        }
+});
+
     }
+
+
 }
