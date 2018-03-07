@@ -28,7 +28,9 @@ import java.util.Map;
 public class login extends AppCompatActivity {
     EditText username,password;
     TextView not_registered_yet;
-    Button b1;
+    CheckBox keep_me_logedin;
+    Button b1,b2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,19 @@ public class login extends AppCompatActivity {
         username=(EditText)findViewById(R.id.username);
         password=(EditText)findViewById(R.id.password);
         b1=(Button)findViewById(R.id.login_button);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+        b2=(Button)findViewById(R.id.temppbutton);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(login.this,home_page.class);
+                startActivity(i);
+            }
+        });
+
+
+       b1.setOnClickListener(new View.OnClickListener() {
+
            @Override
            public void onClick(View v) {
 

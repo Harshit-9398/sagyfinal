@@ -5,14 +5,63 @@
     tools:context="com.example.abhi.sagyfinal.interestedvillages_fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/about_button"
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="20dp"
+        android:background="#006080">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="ABOUT"
+            android:textColor="@android:color/background_dark"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingHorizontal="15dp"
+    android:layout_marginTop="70dp">
+
+    <TextView
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:text="about click" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="18dp"
+        android:inputType="textMultiLine"
+        android:text="On India’s Independence Day, the Prime Minister Shri Narendra Modi, made a commitment to launch the Saansad Adarsh Gram Yojana (SAANJHI). Holding true the commitment made, he is launching the Scheme on 11th October, 2014 - Lok Nayak Jai Prakash Narayan Ji’s birth anniversary – at Vigyan Bhawan, New Delhi.
 
 
+ The goal is to develop three Adarsh Grams by March 2019, of which one would be achieved by 2016. Thereafter, five such Adarsh Grams (one per year) will be selected and developed by 2024. "
+        android:textSize="20dp" />
+</LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/rounded_background"
+            android:text="READ MORE"
+            android:textColor="#eee" />
+
+
+
+    </RelativeLayout>
 
 
 </FrameLayout>

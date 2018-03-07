@@ -17,20 +17,20 @@
             android:gravity="center"
             android:paddingTop="100dp"
             android:background="@drawable/outlined">
+
             <TextView
                 android:id="@+id/fullscreen_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="10dp"
                 android:gravity="center"
                 android:keepScreenOn="true"
-                android:text="SAGY"
-                android:elevation="10dp"
-                android:textColor="#fff"
-                android:shadowRadius="10"
                 android:shadowColor="#002633"
-                android:textStyle="bold"
+                android:shadowRadius="10"
+                android:text="SAGY"
+                android:textColor="#fff"
                 android:textSize="60sp"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/fullscreen_content1"
