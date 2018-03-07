@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class splash extends AppCompatActivity {
-
     String saved_username;
     String saved_password;
     @Override

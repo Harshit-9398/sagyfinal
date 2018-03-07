@@ -59,7 +59,7 @@
                     android:layout_marginVertical="5dp"
                     android:background="@drawable/textfield"
                     android:drawableRight="@drawable/ic_user"
-                    android:hint="Your username"
+                    android:hint="Your Username"
 
                     android:paddingHorizontal="15dp"
                     android:paddingVertical="8dp"
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/textfield"
                     android:drawableRight="@drawable/ic_lnr_lock"
-                    android:hint="Your password"
+                    android:hint="Your Password"
                     android:textColor="@color/colorPrimaryDark"
                     android:inputType="textPassword"
                     android:paddingHorizontal="15dp"
@@ -85,21 +85,12 @@
 
                     android:weightSum="2">
 
-                    <CheckBox
-                        android:id="@+id/keep_me_logedin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="keep me logged in"
-                        android:textColor="#006080  "
-                        android:textSize="14dp" />
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="forgot password? "
+                        android:text="Forgot your Password? "
                         android:textColor="#006080 "
                         android:textSize="14dp" />
                 </LinearLayout>
@@ -133,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="right"
-                    android:text="not registered yet"
+                    android:text="Not Registered yet? Click here"
                     android:textColor="#006080 "
                     android:textSize="18dp" />
 
