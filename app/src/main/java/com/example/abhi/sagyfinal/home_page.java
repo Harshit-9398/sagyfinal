@@ -99,7 +99,10 @@ public class home_page extends AppCompatActivity
         } else if (id == R.id.about) {
             fragment = new about_fragment();
 
-        } else if (id == R.id.nav_send) {
+        }
+
+        else if (id == R.id.nav_send) {
+            fragment=new help_fragment();
 
         }
 
