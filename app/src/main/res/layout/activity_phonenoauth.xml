@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#006080"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="40dp"
+    >
+
+
+    <LinearLayout
+        android:background="#cfd8dc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4.2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_marginTop="45dp"
+            android:layout_width="280dp"
+            android:layout_height="140dp"
+
+            android:src="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="PSTU"
+             />
+
+        <TextView
+            android:id="@+id/status"
+           android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorAccent"
+            android:text="You are not logged in !" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                tools:text="Veriication Sucessfull"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_below="@+id/detail"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.8"
+        android:background="#ddd"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/phone_auth_fields"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#006080"
+            android:paddingVertical="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2.0">
+
+                <EditText
+                    android:id="@+id/field_phone_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="hint_phone_number"
+                    android:background="@drawable/textfield"
+                    android:layout_weight="1.0"
+                    android:inputType="phone"/>
+
+                <EditText
+                    android:id="@+id/field_verification_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textfield"
+                    android:hint="hint_verification_code"
+                    android:layout_weight="1.0"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3.0">
+
+                <Button
+
+                    android:id="@+id/button_start_verification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_background"
+                    android:layout_weight="1.0"
+                    android:text="start_phone_auth"/>
+                <Button
+                                        android:id="@+id/button_verify_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_background"
+                    android:layout_weight="1.0"
+                    android:text="verify_phone_auth"/>
+
+                <Button
+
+                    android:id="@+id/button_resend"
+                    android:layout_width="0dp"
+                    android:background="@drawable/rounded_background"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:text="resend_phone_auth"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signed_in_buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="gone"
+            android:weightSum="1.0">
+
+            <Button
+                android:id="@+id/sign_out_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="Sign Out"
+              />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    </LinearLayout>
+
+
+

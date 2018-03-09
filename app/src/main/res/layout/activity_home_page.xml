@@ -8,6 +8,9 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+
+
+
     <include
         layout="@layout/app_bar_home_page"
         android:layout_width="match_parent"
@@ -21,5 +24,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home_page"
         app:menu="@menu/activity_home_page_drawer" />
+
 
 </android.support.v4.widget.DrawerLayout>

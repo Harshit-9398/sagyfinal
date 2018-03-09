@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.example.abhi.sagyfinal">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -24,10 +25,10 @@
         <activity
             android:name=".home_page"
             android:label="@string/title_activity_home_page"
-
             android:theme="@style/AppTheme" />
-        <activity android:name=".web_view"></activity>
-
+        <activity android:name=".web_view" />
+        <activity android:name=".phonenoauth" />
+        <activity android:name=".otpScreen"></activity>
     </application>
 
 </manifest>

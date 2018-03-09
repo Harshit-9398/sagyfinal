@@ -44,7 +44,7 @@ public class login extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(login.this,home_page.class);
+                Intent i=new Intent(login.this,phonenoauth.class);
                 startActivity(i);
             }
         });

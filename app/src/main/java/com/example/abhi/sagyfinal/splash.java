@@ -2,6 +2,7 @@ package com.example.abhi.sagyfinal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,23 +14,32 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        Thread th=new Thread(){
-            public void run(){
-                try{
-                    sleep(3000);
 
-                    userinfo();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
 
-
-                }
-                catch(Exception e)
-                {}
-                finally {
-                    finish();
-                }
+                userinfo();
             }
-        };
-        th.start();
+        }, 3000);
+
+//        Thread th=new Thread(){
+//            public void run(){
+//                try{
+//                    sleep(3000);
+//
+//                    userinfo();
+//
+//
+//                }
+//                catch(Exception e)
+//                {}
+//                finally {
+//                    finish();
+//                }
+//            }
+//        };
+//        th.start();
 
     }
 
