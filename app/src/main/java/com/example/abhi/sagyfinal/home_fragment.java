@@ -36,6 +36,7 @@ public class home_fragment extends Fragment {
     {
         super.onViewCreated(view, savedInstanceState);
         vp = view.findViewById(R.id.viewpager);
+   //     ViewPager viewPager=
         //Code for ViewPagerAdapter..
 
 

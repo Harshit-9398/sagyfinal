@@ -2,6 +2,7 @@ package com.example.abhi.sagyfinal;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.ChangeImageTransform;
@@ -26,68 +27,130 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class login extends AppCompatActivity {
-    EditText username,password;
+    EditText username, password;
     TextView not_registered_yet;
-    CheckBox keep_me_logedin;
-    Button b1,b2;
+    databasehelper d;
+
+    EditText testpur;
+    //String teststring;
+
+    String username1;
+   // int id;
+    String password1;
+    StringBuffer buffer=new StringBuffer();
+    Button b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        not_registered_yet=(TextView)findViewById(R.id.t1);
-        username=(EditText)findViewById(R.id.username);
-        password=(EditText)findViewById(R.id.password);
-        b1=(Button)findViewById(R.id.login_button);
+        not_registered_yet = (TextView) findViewById(R.id.t1);
+        username = (EditText) findViewById(R.id.t11);
+        password = (EditText) findViewById(R.id.t12);
+       // testpur = (EditText) findViewById(R.id.test);
 
-        b2=(Button)findViewById(R.id.temppbutton);
-        b2.setOnClickListener(new View.OnClickListener() {
+      //  id = Integer.parseInt(username.getText().toString());
+        username1 = username.getText().toString();
+        password1 = password.getText().toString();
+
+       // teststring=testpur.getText().toString();
+
+
+
+
+        b1 = (Button) findViewById(R.id.login_button);
+
+
+
+
+        b1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(login.this,phonenoauth.class);
-                startActivity(i);
+                Toast.makeText(login.this, "helllo"+username1, Toast.LENGTH_SHORT).show();
+
+
+                try {
+
+                    if (username1.equals(null)) {
+                        username.setError("enter valid username");
+                        username.requestFocus();
+                        return;
+                    }
+                   /* if ((password1.length()) < 6) {
+                        password.setError("min length 6 chars");
+                        password.requestFocus();
+                        return;
+                    }*/
+                    verifylogin();
+                } catch (Exception e) {
+                    Toast.makeText(login.this, "" + e, Toast.LENGTH_SHORT).show();
+                }
             }
         });
-
-
-       b1.setOnClickListener(new View.OnClickListener() {
-
-           @Override
-           public void onClick(View v) {
-
-
-               try {
-                   String username1 = username.getText().toString();
-                   String password1 = password.getText().toString();
-                   if (username1.isEmpty()) {
-                       username.setError("enter valid username");
-                       username.requestFocus();
-                       return;
-                   }
-                   if (password1.length() < 6) {
-                       password.setError("min length 6 chars");
-                       password.requestFocus();
-                       return;
-                   }
-                   logindemo();
-               }catch(Exception e) {
-                   Toast.makeText(login.this, ""+e, Toast.LENGTH_SHORT).show();
-               }
-           }
-       });
-
 
 
         not_registered_yet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(login.this,register.class);
+                Intent i = new Intent(login.this, register.class);
                 startActivity(i);
 
             }
         });
     }
-    public void logindemo() {
+
+    public void verifylogin() {
+
+        d = new databasehelper(this);
+
+        Cursor c = d.findrecord(username1);
+
+
+      /*  while(c.moveToNext()) {
+            buffer.append(c.getString(0) + "\n");
+            buffer.append(c.getString(1) + "\n");
+            buffer.append(c.getString(2) + "\n");
+            buffer.append(c.getString(3) + "\n");
+            buffer.append(c.getString(4) + "\n");
+            buffer.append(c.getString(5) + "\n\n");
+            Toast.makeText(this,buffer.toString(),Toast.LENGTH_SHORT).show();
+
+            if(c.getString(5)==password1){
+                Toast.makeText(login.this, "valid", Toast.LENGTH_SHORT).show();
+            }
+        }
+*/
+
+
+
+        while(c.moveToNext())
+        {
+            buffer.append(c.getString(5));
+            Toast.makeText(this,buffer.toString(),Toast.LENGTH_SHORT).show();
+         //   String once=c.getString(5);
+        if(buffer.toString().equals(password1)) {
+
+                sharedprefrences();
+
+                Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(login.this, home_page.class);
+                startActivity(i);
+
+            } else {
+                Toast.makeText(login.this, "invalid username or password", Toast.LENGTH_SHORT).show();
+                username.setError("!!!");
+                username.setText("");
+                password.setError("!!!");
+                password.setText("");
+                username.requestFocus();
+            }
+
+
+
+    }}
+
+    /*public void logindemo() {
         StringRequest st = new StringRequest(Request.Method.POST, "https://wwwapktreegq.000webhostapp.com/webservices/login_with_app_Register.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -109,7 +172,10 @@ public class login extends AppCompatActivity {
         RequestQueue q = Volley.newRequestQueue(login.this);
         q.add(st);
     }
-    public void getStatus(String stt) {
+    */
+
+
+   /* public void getStatus(String stt) {
         try {
             JSONObject obj = new JSONObject(stt);
             String res = obj.getString("status");
@@ -128,5 +194,19 @@ public class login extends AppCompatActivity {
         } catch(Exception e) {
             Toast.makeText(login.this, "Error"+e, Toast.LENGTH_SHORT).show();
         }
+    }*/
+
+
+    public void sharedprefrences() {
+
+
+        SharedPreferences sp = getSharedPreferences("userinfo", MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        e.putString("username", username.getText().toString());
+        e.putString("password", password.getText().toString());
+        e.commit();
+
+
     }
 }
+

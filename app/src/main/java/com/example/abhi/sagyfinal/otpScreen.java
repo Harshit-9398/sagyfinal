@@ -15,10 +15,10 @@ public class otpScreen extends AppCompatActivity {
 
         otp=(EditText)findViewById(R.id.otpcode);
 
-        otpchecker();
+        //otpchecker();
     }
 
-    public  void otpchecker(){
+   /* public  void otpchecker(){
       int otpcode= Integer.parseInt(otp.getText().toString());
 
       if(otpcode==register.otpnumber)
@@ -30,5 +30,5 @@ public class otpScreen extends AppCompatActivity {
               otp.setError("wrong otp code");
 
     }
-    }
+    }*/
 }

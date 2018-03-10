@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "653570563815",
+    "firebase_url": "https://sagyfinal.firebaseio.com",
+    "project_id": "sagyfinal",
+    "storage_bucket": "sagyfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653570563815:android:12508b8c239f3cb1",
+        "android_client_info": {
+          "package_name": "com.example.abhi.sagyfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653570563815-0emmmg98dl0l20ukuo3ulolc5vmf7nm6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhi.sagyfinal",
+            "certificate_hash": "cc2a00ea4bd5068dce761927ce8104a3b584445d"
+          }
+        },
+        {
+          "client_id": "653570563815-sf3mij6sbvm6frkbppqicgm4q733uthe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3IMoCiaT5-DF_hvYfy7E4kpv2MRpppj4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653570563815-sf3mij6sbvm6frkbppqicgm4q733uthe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

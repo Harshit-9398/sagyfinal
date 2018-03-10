@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,10 +36,9 @@ public class register extends AppCompatActivity {
     Button reg;
     databasehelper d;
 
-    static int otpnumber;
-    String phone;
-    String message;
-    int MY_PERMISSIONS_REQUEST_SENDSMS=1;
+
+
+    //int MY_PERMISSIONS_REQUEST_SENDSMS=1;
     //otp generation
 
 
@@ -57,7 +57,7 @@ public class register extends AppCompatActivity {
         pwd = findViewById(R.id.password);
         cpwd = findViewById(R.id.cpass);
 
-        phone = pno.getText().toString();
+      //  phone = pno.getText().toString();
 
 
         reg.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class register extends AppCompatActivity {
             public void onClick(View v) {
                 registering();
 
-                otpgeneration();
+            //    otpgeneration();
                 //   Intent i = new Intent(register.this, login.class);
                 //   startActivity(i);
             }
@@ -113,7 +113,7 @@ public class register extends AppCompatActivity {
     }*/
 
 
-    public void otpgeneration() {
+  /*  public void otpgeneration() {
 
         Random random = new Random();
         otpnumber = random.nextInt(999);
@@ -133,12 +133,15 @@ public class register extends AppCompatActivity {
                 //startActivity(i);
                 Toast.makeText(this,"i am runing",Toast.LENGTH_SHORT).show();
 
-
-        }
-
 }
+        }*/
 
-public  void registering(){
+
+
+public  void registering() {
+
+    d = new databasehelper(this);
+
     String uname = us.getText().toString();
     String adhr = adhrno.getText().toString();
     String email = mail.getText().toString();
@@ -147,34 +150,54 @@ public  void registering(){
     String cpass = cpwd.getText().toString();
 
 
-            if ((uname.isEmpty())||(adhr.isEmpty())||(email.isEmpty())||(phone.isEmpty())||(pass.isEmpty())||(cpass.isEmpty()))
-                Toast.makeText(register.this,"fill details correctly",Toast.LENGTH_SHORT).show();
-            else
-            {
+    if ((uname.isEmpty()) || (adhr.isEmpty()) || (email.isEmpty()) || (phone.isEmpty()) || (pass.isEmpty()) || (cpass.isEmpty()))
+        Toast.makeText(register.this, "fill details correctly", Toast.LENGTH_SHORT).show();
 
-                if(!pass.equals(cpass))
-                {cpwd.setError("passwords doesnot match");
-                cpwd.requestFocus();}
+    else if(adhr.length()!=12)
+    {
+        adhrno.setError("enter valid aadhaar number");
+    }
+    else if(!(Patterns.EMAIL_ADDRESS.matcher(email).matches()))
+    {
+            mail.setError("enter valid emailadd");
+    }
+    else if(!(phone.length()==10))
+    {
+        pno.setError("enter valid phone no");
+    }
 
-        /*        boolean b=d.insertdata();
-                if(b==true)
-                    Toast.makeText(MainActivity.this,"row inserted",Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(MainActivity.this, "failed", Toast.LENGTH_SHORT).show();
+
+    else {
+
+        if (!pass.equals(cpass)) {
+            cpwd.setError("passwords does not match");
+            cpwd.requestFocus();
+        } else {
+            boolean b = d.insertdata(uname, adhr, email, phone, pass);
+            if (b == true) {
+                Toast.makeText(register.this, "registration done!", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(register.this, login.class);
+                startActivity(i);
+            } else {
+                Toast.makeText(register.this, "registration failed", Toast.LENGTH_SHORT).show();
+                clr();
             }
-            clr();
-
         }
+    }
+}
+    public void clr()
+    {
+        us.setText("");
+        adhrno.setText("");
+        mail.setText("");
+        pno.setText("");
+        pwd.setText("");
+        cpwd.setText("");
+        us.requestFocus();
 
-        public void clr()
-        {
-            name.setText("");
-            surname.setText("");
-            marks.setText("");
-            name.requestFocus();
+    }
 
-        }
-    });
-}*/
 
-}}}
+
+}

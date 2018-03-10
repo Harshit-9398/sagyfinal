@@ -34,7 +34,7 @@ public class databasehelper extends SQLiteOpenHelper {
     public boolean insertdata(String username,String aadhaar,String email,String phone,String password)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-                 ContentValues c= new ContentValues();
+        ContentValues c= new ContentValues();
         c.put(col2,username);
         c.put(col3,aadhaar);
         c.put(col4,email);
@@ -42,30 +42,22 @@ public class databasehelper extends SQLiteOpenHelper {
         c.put(col6,password);
        long result= db.insert(tablename,null,c);
        if(result==-1)
-           return false;
-       else
-           return true;
+        return false;
+    else
+        return true;
 
 
     }
-    public Cursor findrecord(int id1){
+
+    public Cursor findrecord(String username11 ){
 
         SQLiteDatabase db=this.getReadableDatabase();
-        Cursor c=db.rawQuery("select * from " +tablename+ " where id =" +id1,null);
+          //Cursor c=db.rawQuery("select * from " +tablename ,null);
+         Cursor c=db.rawQuery("select * from " +tablename+ " where "+col2+" = 'himanshu' ;",null);
         return c;
 
 
     }
 
-    public Cursor findallrecord(){
 
-
-        SQLiteDatabase db=this.getReadableDatabase();
-
-        Cursor c=db.rawQuery("select * from " +tablename ,null);
-
-        return c;
-
-
-    }
 }
