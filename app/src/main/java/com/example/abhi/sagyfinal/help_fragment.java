@@ -10,11 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class help_fragment extends Fragment {
 
-    Button b1,web;
+    Button b1,b2;
+    EditText ed1;
+    String sfrom;
+    String sto="harshit@gmail.com";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -26,26 +30,38 @@ public class help_fragment extends Fragment {
     public void onViewCreated(View view,Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        b2=(Button) view.findViewById(R.id.b1);
+      b1=(Button) view.findViewById(R.id.button1);
+      ed1=(EditText)view.findViewById(R.id.et);
 
-        b1=(Button)view.findViewById(R.id.help_button);
-        web=(Button)view.findViewById(R.id.button);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"u r on help fragment",Toast.LENGTH_SHORT).show();
+      b1.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              sfrom=ed1.getText().toString();
+             //String from1[]={sfrom};
+              String to1[]={sto,sfrom};
+              sendEmail(to1);
+          }
 
-            }
-        });
-        web.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri=Uri.parse("http://saanjhi.gov.in/");
-                Intent i=new Intent(Intent.ACTION_VIEW,uri);
-                startActivity(i);
+      }
+      );
+      b2.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent i= new Intent(Intent.ACTION_DIAL,Uri.parse("tel:8118808259"));
+              startActivity(i);
+          }
+      });
 
-            }
-        });
-
-
+    }
+    public void sendEmail(String[] to1)
+    { //String from[]= from1;
+    String to[]=to1;
+    Intent i =new Intent(Intent.ACTION_SEND);
+    i.putExtra(Intent.EXTRA_EMAIL, to);
+i.setData(Uri.parse("mailto:harshitmharshi@gmail.com"));
+i.setType("text/plain");
+    i.setType("message/rfc467");
+    startActivity(Intent.createChooser(i,"send via"));
     }
 }

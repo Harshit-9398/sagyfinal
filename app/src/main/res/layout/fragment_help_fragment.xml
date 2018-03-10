@@ -2,76 +2,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/helpo"
+    android:background="#007399 "
 
     tools:context="com.example.abhi.sagyfinal.help_fragment">
-
-
-    <Button
-        android:id="@+id/help_button"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="10">
 
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="bottom"
-        android:text="Help"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="519dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:paddingTop="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/textView2"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:text="HELP"
+                    android:textColor="@android:color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/holo_blue_light">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="CONTACT US"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    />
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                   android:layout_gravity="center_horizontal" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="EMAIL"
+                    android:textStyle="bold"
+                    android:id="@+id/button1"/>
+            </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"/>
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="64dp"
-        android:fontFamily="cursive"
-        android:text="Go to Website"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="36sp"
+        android:layout_height="50dp"
+        android:text="CALL"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:id="@+id/b1"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="43dp"
-        android:layout_height="51dp"
-        android:layout_alignBaseline="@+id/textView2"
+</LinearLayout>
 
 
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignEnd="@+id/button2"
-        android:text=">>"
-        tools:layout_editor_absoluteX="325dp"
-        tools:layout_editor_absoluteY="176dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="281dp"
-        android:layout_height="127dp"
-        android:layout_above="@+id/help_button"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="151dp"
-        android:fontFamily="cursive"
-        android:text="FAQs about app"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="329dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_marginEnd="28dp"
-        android:text="?"
-        tools:layout_editor_absoluteX="333dp"
-        tools:layout_editor_absoluteY="342dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
 
 </RelativeLayout>
